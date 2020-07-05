@@ -5,6 +5,7 @@ import github.mattah12.kanohicraft.blocks.ProtodermisBlock;
 import github.mattah12.kanohicraft.blocks.ProtodermisOre;
 import github.mattah12.kanohicraft.setup.ClientProxy;
 import github.mattah12.kanohicraft.setup.IProxy;
+import github.mattah12.kanohicraft.setup.ModSetup;
 import github.mattah12.kanohicraft.setup.ServerProxy;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
@@ -27,6 +28,8 @@ public class KanohiCraft {
 
     public static IProxy proxy = DistExecutor.runForDist(() -> () -> new ClientProxy(), () -> () -> new ServerProxy());
 
+    public static ModSetup setup = new ModSetup();
+
     public static final String MODID = "kanohicraft";
 
     public static final Logger LOGGER = LogManager.getLogger(MODID);
@@ -37,6 +40,8 @@ public class KanohiCraft {
     }
 
     private void setup(final FMLCommonSetupEvent event){
+        setup.init();
+        proxy.init();
     }
     @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class RegistryEvents {
@@ -48,8 +53,10 @@ public class KanohiCraft {
         }
         @SubscribeEvent
         public static void onItemRegistry(final RegistryEvent.Register<Item> event) {
-            event.getRegistry().register(new BlockItem(ModBlocks.PROTODERMISBLOCK, new Item.Properties()).setRegistryName("protoblock")) ;
-            event.getRegistry().register(new BlockItem(ModBlocks.PROTODERMISORE, new Item.Properties()).setRegistryName("protoore"));
+            Item.Properties properties = new Item.Properties()
+                    .group(setup.itemGroup);
+            event.getRegistry().register(new BlockItem(ModBlocks.PROTODERMISBLOCK, properties).setRegistryName("protoblock")) ;
+            event.getRegistry().register(new BlockItem(ModBlocks.PROTODERMISORE, properties).setRegistryName("protoore"));
         }
     }
 }

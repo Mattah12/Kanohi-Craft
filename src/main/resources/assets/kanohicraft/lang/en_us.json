@@ -1,4 +1,7 @@
 {
   "block.kanohicraft.protoore": "Protodermis Ore",
-  "block.kanohicraft.protoblock": "Protodermis Block"
+  "block.kanohicraft.protoblock": "Protodermis Block",
+
+  "comment": "Creative Tabs",
+  "ItemGroup.kanohicraft": "Kanohi Craft"
 }
