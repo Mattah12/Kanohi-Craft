@@ -1,6 +1,6 @@
 {
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "kanohicraft.item/protoingot"
-  }
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "kanohicraft.item/protoingot"
+    }
 }
