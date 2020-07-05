@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "protoingot",
+  "ingredients": [
+    {
+      "item": "kanohicraft:protoblock"
+    }
+  ],
+  "result": {
+    "item": "kanohicraft:protoingot",
+    "count": 9
+  }
+}
