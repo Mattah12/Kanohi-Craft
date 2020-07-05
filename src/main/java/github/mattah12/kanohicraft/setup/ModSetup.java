@@ -9,7 +9,6 @@ public class ModSetup {
     public ItemGroup itemGroup = new ItemGroup("kanohicraft") {
         @Override
         public ItemStack createIcon() {
-            //return new ItemStack(ModBlocks.PROTODERMISBLOCK);
             return new ItemStack(ModBlocks.PROTODERMISORE);
         }
     };
