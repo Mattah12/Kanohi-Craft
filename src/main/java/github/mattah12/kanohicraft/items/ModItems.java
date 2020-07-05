@@ -4,6 +4,6 @@ import net.minecraftforge.registries.ObjectHolder;
 
 public class ModItems {
 
-    @ObjectHolder("kanohicraft:protoblock")
+    @ObjectHolder("kanohicraft:protoingot")
     public static ProtodermisIngot PROTODERMISINGOT;
 }
