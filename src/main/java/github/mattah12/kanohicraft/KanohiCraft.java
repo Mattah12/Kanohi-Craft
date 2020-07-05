@@ -2,6 +2,7 @@ package github.mattah12.kanohicraft;
 
 import github.mattah12.kanohicraft.blocks.ModBlocks;
 import github.mattah12.kanohicraft.blocks.ProtodermisBlock;
+import github.mattah12.kanohicraft.blocks.ProtodermisOre;
 import github.mattah12.kanohicraft.setup.ClientProxy;
 import github.mattah12.kanohicraft.setup.IProxy;
 import github.mattah12.kanohicraft.setup.ServerProxy;
@@ -42,11 +43,13 @@ public class KanohiCraft {
         @SubscribeEvent
         public static void onBlockRegistry(final RegistryEvent.Register<Block> event) {
             event.getRegistry().register(new ProtodermisBlock()) ;
+            event.getRegistry().register(new ProtodermisOre());
 
         }
         @SubscribeEvent
         public static void onItemRegistry(final RegistryEvent.Register<Item> event) {
             event.getRegistry().register(new BlockItem(ModBlocks.PROTODERMISBLOCK, new Item.Properties()).setRegistryName("protoblock")) ;
+            event.getRegistry().register(new BlockItem(ModBlocks.PROTODERMISORE, new Item.Properties()).setRegistryName("protoore"));
         }
     }
 }

@@ -6,5 +6,7 @@ public class ModBlocks {
 
     @ObjectHolder("kanohicraft:protoblock")
     public static ProtodermisBlock PROTODERMISBLOCK;
+    @ObjectHolder("kanohicraft:protoore")
+    public static ProtodermisOre PROTODERMISORE;
 
 }
