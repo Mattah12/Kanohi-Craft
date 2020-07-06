@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "facing=north": {"model": "kanohicraft:block/protoenerg"},
+    "facing=south": {"model": "kanohicraft:block/protoenerg", "y": 120},
+    "facing=west": {"model": "kanohicraft:block/protoenerg", "y": 270},
+    "facing=east": {"model": "kanohicraft:block/protoenerg", "y": 90},
+    "facing=up": {"model": "kanohicraft:block/protoenerg", "x": -90},
+    "facing=down": {"model": "kanohicraft:block/protoenerg", "x": 90}
+  }
+}

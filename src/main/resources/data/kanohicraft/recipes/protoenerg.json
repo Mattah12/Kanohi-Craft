@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#Y#",
+    "YXY",
+    "#Y#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:redstone"
+    },
+    "X": {
+      "item": "minecraft:furnace"
+    },
+    "Y": {
+      "item": "kanohicraft:protoingot"
+    }
+  },
+  "result": {
+    "item": "kanohicraft:protoenerg"
+  }
+}

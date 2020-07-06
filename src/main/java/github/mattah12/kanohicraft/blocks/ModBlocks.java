@@ -8,5 +8,7 @@ public class ModBlocks {
     public static ProtodermisBlock PROTODERMISBLOCK;
     @ObjectHolder("kanohicraft:protoore")
     public static ProtodermisOre PROTODERMISORE;
+    @ObjectHolder("kanohicraft:protoenerg")
+    public static ProtodermisEnergizer PROTODERMISENERGIZER;
 
 }

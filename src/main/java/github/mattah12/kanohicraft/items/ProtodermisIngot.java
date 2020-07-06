@@ -9,7 +9,7 @@ public class ProtodermisIngot extends Item {
         super(new Item.Properties()
                 .maxStackSize(64)
                 .group(KanohiCraft.setup.itemGroup));
-        setRegistryName("protoingot");
+        setRegistryName("kanohicraft:protoingot");
 
     }
 }
