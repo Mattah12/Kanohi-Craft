@@ -1,9 +1,6 @@
 package github.mattah12.kanohicraft;
 
-import github.mattah12.kanohicraft.blocks.ModBlocks;
-import github.mattah12.kanohicraft.blocks.ProtodermisBlock;
-import github.mattah12.kanohicraft.blocks.ProtodermisEnergizer;
-import github.mattah12.kanohicraft.blocks.ProtodermisOre;
+import github.mattah12.kanohicraft.blocks.*;
 import github.mattah12.kanohicraft.items.ProtodermisIngot;
 import github.mattah12.kanohicraft.setup.ClientProxy;
 import github.mattah12.kanohicraft.setup.IProxy;
@@ -12,6 +9,7 @@ import github.mattah12.kanohicraft.setup.ServerProxy;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.DistExecutor;
@@ -62,6 +60,10 @@ public class KanohiCraft {
             event.getRegistry().register(new BlockItem(ModBlocks.PROTODERMISORE, properties).setRegistryName("protoore"));
             event.getRegistry().register(new BlockItem(ModBlocks.PROTODERMISENERGIZER, properties).setRegistryName("protoenerg"));
             event.getRegistry().register(new ProtodermisIngot());
+        }
+        @SubscribeEvent
+        public static void onTileEntityRegistry(final RegistryEvent.Register<TileEntityType<?>> event){
+            event.getRegistry().register(TileEntityType.Builder.create(ProtodermisEnergizerTile::new, ModBlocks.PROTODERMISENERGIZER).build(null).setRegistryName("protoenerg"));
         }
     }
 }
