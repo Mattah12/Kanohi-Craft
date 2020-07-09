@@ -1,7 +1,7 @@
 {
   "parent": "block/cube",
   "textures": {
-    "particle": "kanohicraft:block/protoenerg_back",
+    "particle": "kanohicraft:block/protoenerg_top",
     "down": "kanohicraft:block/protoenerg_top",
     "up": "kanohicraft:block/protoenerg_top",
     "east": "kanohicraft:block/protoenerg_east",
