@@ -7,9 +7,12 @@ import github.mattah12.kanohicraft.setup.IProxy;
 import github.mattah12.kanohicraft.setup.ModSetup;
 import github.mattah12.kanohicraft.setup.ServerProxy;
 import net.minecraft.block.Block;
+import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntityType;
+import net.minecraft.util.math.BlockPos;
+import net.minecraftforge.common.extensions.IForgeContainerType;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.DistExecutor;
@@ -26,11 +29,11 @@ import org.apache.logging.log4j.Logger;
 @Mod(KanohiCraft.MODID)
 public class KanohiCraft {
 
+    public static final String MODID ="kanohicraft";
+
     public static IProxy proxy = DistExecutor.runForDist(() -> () -> new ClientProxy(), () -> () -> new ServerProxy());
 
     public static ModSetup setup = new ModSetup();
-
-    public static final String MODID = "kanohicraft";
 
     public static final Logger LOGGER = LogManager.getLogger(MODID);
 
@@ -64,6 +67,14 @@ public class KanohiCraft {
         @SubscribeEvent
         public static void onTileEntityRegistry(final RegistryEvent.Register<TileEntityType<?>> event){
             event.getRegistry().register(TileEntityType.Builder.create(ProtodermisEnergizerTile::new, ModBlocks.PROTODERMISENERGIZER).build(null).setRegistryName("protoenerg"));
+        }
+
+        public static void onContainerRegistry (final RegistryEvent.Register<ContainerType<?>> event){
+            event.getRegistry().register(IForgeContainerType.create((windowId, inv, data) -> {
+                BlockPos pos = data.readBlockPos();
+                return new ProtodermisEnergizerContainer(windowId, KanohiCraft.proxy.getClientWorld(),pos,inv, KanohiCraft.proxy.getClientPlayer());
+            }).setRegistryName("protoenerg"));
+
         }
     }
 }
