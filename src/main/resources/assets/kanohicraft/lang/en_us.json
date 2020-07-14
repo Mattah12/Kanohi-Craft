@@ -5,6 +5,11 @@
 
   "item.kanohicraft.protoingot": "Protodermis Ingot",
 
+  "item.kanohicraft.maskhau": "Kanohi Hau",
+  "item.kanohicraft.maskkaukau": "Kanohi Kaukau",
+  "item.kanohicraft.maskkakama": "Kanohi Kakama",
+
+
   "comment": "Creative Tabs",
   "itemGroup.kanohicraft": "Kanohi Craft"
 }

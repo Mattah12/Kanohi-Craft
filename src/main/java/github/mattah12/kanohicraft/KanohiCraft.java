@@ -1,6 +1,9 @@
 package github.mattah12.kanohicraft;
 
 import github.mattah12.kanohicraft.blocks.*;
+import github.mattah12.kanohicraft.items.MaskHau;
+import github.mattah12.kanohicraft.items.MaskKakama;
+import github.mattah12.kanohicraft.items.MaskKaukau;
 import github.mattah12.kanohicraft.items.ProtodermisIngot;
 import github.mattah12.kanohicraft.setup.ClientProxy;
 import github.mattah12.kanohicraft.setup.IProxy;
@@ -63,6 +66,10 @@ public class KanohiCraft {
             event.getRegistry().register(new BlockItem(ModBlocks.PROTODERMISORE, properties).setRegistryName("protoore"));
             event.getRegistry().register(new BlockItem(ModBlocks.PROTODERMISENERGIZER, properties).setRegistryName("protoenerg"));
             event.getRegistry().register(new ProtodermisIngot());
+            event.getRegistry().register(new MaskHau());
+            event.getRegistry().register(new MaskKaukau());
+            event.getRegistry().register(new MaskKakama());
+
         }
         @SubscribeEvent
         public static void onTileEntityRegistry(final RegistryEvent.Register<TileEntityType<?>> event){

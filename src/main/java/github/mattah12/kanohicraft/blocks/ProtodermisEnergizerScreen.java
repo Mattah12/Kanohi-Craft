@@ -2,6 +2,7 @@ package github.mattah12.kanohicraft.blocks;
 
 import com.mojang.blaze3d.platform.GlStateManager;
 import github.mattah12.kanohicraft.KanohiCraft;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.util.ResourceLocation;
@@ -23,8 +24,7 @@ public class ProtodermisEnergizerScreen extends ContainerScreen<ProtodermisEnerg
 
     @Override
     protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
-        this.font.drawString(this.title.getFormattedText(), 8.0F, 6.0F, 4210752);
-        this.font.drawString(this.playerInventory.getDisplayName().getFormattedText(), 8.0F, (float)(this.ySize - 96 + 2), 4210752);
+        drawString(Minecraft.getInstance().fontRenderer, "Energy: " + container.getEnergy(), 10, 10, 0xffffff);
     }
 
     @Override
